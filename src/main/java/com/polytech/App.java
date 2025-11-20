@@ -1,6 +1,9 @@
 package com.polytech;
 import com.polytech.tp.Cours;
 import com.polytech.tp.CoursBuilder;
+import com.polytech.tp.CoursEnLigne;
+import com.polytech.tp.CoursMagistral;
+import com.polytech.tp.CoursEnAnglais;
 import com.polytech.tp.Etudiant;
 import com.polytech.tp.GestionnaireEmploiDuTemps;
 import com.polytech.tp.ICours;
@@ -12,6 +15,42 @@ import com.polytech.tp.Observer;
  *
  */
 public class App {
+    public static void main(String[] args) {
+        ICours cours1 = new CoursBuilder()
+                .setMatiere("Mathématiques")
+                .setEnseignant("beddar youcef")
+                .setSalle("Salle L4")
+                .build();
+        ICours coursEnLigne = new CoursEnLigne(cours1);
+
+        System.out.println(cours1.getDescription());
+        // Cours de math  avec  youcef(Salle 101)
+
+        System.out.println(coursEnLigne.getDescription());
+       
+        ICours cours2 = new CoursBuilder()
+                .setMatiere("Algo")
+                .setEnseignant("Mahani")
+                .setSalle("Salle L3")
+                .build();
+        ICours CoursEnAnglais= new CoursEnAnglais(cours2);
+         System.out.println(CoursEnAnglais.getDescription());
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+    /* partie app observer 
     public static void main(String[] args) {
 
         // Création du gestionnaire (Subject)
