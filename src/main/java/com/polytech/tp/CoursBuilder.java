@@ -4,6 +4,7 @@ public class CoursBuilder {
     
     private String matiere;
     private String enseignant;
+    // hed la partie si tu charge juste les deux premier , voir App.java 
     private String salle = "Non assignée";
     private String date = "Non définie";
     private String heureDebut = "09:00";
@@ -62,6 +63,6 @@ public class CoursBuilder {
         }
         
         // Création de l'objet Cours
-        return new Cours(matiere, enseignant, salle, date, heureDebut, estOptionnel, niveau, necessiteProjecteur);
+        return new Cours(this.matiere, this.enseignant, this.salle, this.date, this.heureDebut, this.estOptionnel, this.niveau, this.necessiteProjecteur);
     }
 }
